@@ -127,16 +127,14 @@ ul {
 
 .with-icon>svg {
     margin: 0 0 0 var(--spacing-sm);
-    /* animation: rotateArrow 1s forwards;
-    -webkit-animation: rotateArrow 1s forwards; */
 }
 
 .with-icon>svg>path {
-    transition: 0.2s all ease;
-    -webkit-transition: 0.2s all ease;
-    -moz-transition: 0.2s all ease;
-    -ms-transition: 0.2s all ease;
-    -o-transition: 0.2s all ease;
+    transition: 0.2s stroke ease;
+    -webkit-transition: 0.2s stroke ease;
+    -moz-transition: 0.2s stroke ease;
+    -ms-transition: 0.2s stroke ease;
+    -o-transition: 0.2s stroke ease;
 }
 
 a {
@@ -144,11 +142,11 @@ a {
     color: var(--text-gray);
     font-size: var(--a-size);
     font-weight: 500;
-    transition: 0.2s all ease;
-    -webkit-transition: 0.2s all ease;
-    -moz-transition: 0.2s all ease;
-    -ms-transition: 0.2s all ease;
-    -o-transition: 0.2s all ease;
+    transition: 0.2s color ease;
+    -webkit-transition: 0.2s color ease;
+    -moz-transition: 0.2s color ease;
+    -ms-transition: 0.2s color ease;
+    -o-transition: 0.2s color ease;
 }
 
 a:hover,
@@ -157,22 +155,38 @@ a:hover>svg>path {
     stroke: var(--black);
 }
 
-@keyframes rotateArrow {
-    0% {
-        transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-    }
+.activeSvg svg {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transition: 0.5s transform ease;
+    -webkit-transition: 0.5s transform ease;
+    -moz-transition: 0.5s transform ease;
+    -ms-transition: 0.5s transform ease;
+    -o-transition: 0.5s transform ease;
+}
 
-    100% {
-        transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-        -o-transform: rotate(180deg);
-    }
+.inactiveSvg svg {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transition: 0.5s transform ease;
+    -webkit-transition: 0.5s transform ease;
+    -moz-transition: 0.5s transform ease;
+    -ms-transition: 0.5s transform ease;
+    -o-transition: 0.5s transform ease;
+}
+
+.activeLink {
+    color: var(--text-dark);
+}
+
+.activePath {
+    stroke: var(--black);
 }
 
 .top-level-entry-container {
@@ -189,7 +203,18 @@ a:hover>svg>path {
     -moz-border-radius: var(--sub-menu-container);
     -ms-border-radius: var(--sub-menu-container);
     -o-border-radius: var(--sub-menu-container);
-    display: none;
+    opacity: 0;
+    transform: scaleY(0.9);
+    -webkit-transform: scaleY(0.9);
+    -moz-transform: scaleY(0.9);
+    -ms-transform: scaleY(0.9);
+    -o-transform: scaleY(0.9);
+    transform-origin: center top;
+    transition: 0.1s all ease;
+    -webkit-transition: 0.1s all ease;
+    -moz-transition: 0.1s all ease;
+    -ms-transition: 0.1s all ease;
+    -o-transition: 0.1s all ease;
 }
 
 .top-level-entry-container>li {
@@ -202,15 +227,26 @@ a:hover>svg>path {
 
 .top-level-entry-container img {
     width: 15px;
-    margin: 0 var(--spacing-md) 0 0;
+    margin: 0 var(--spacing-sm) 0 0;
 }
 
 #sub-menu-features {
-    display: block;
+    left: -70px;
 }
 
-#sub-menu-company {
-    display: block;
+.show-sub-menu {
+    opacity: 1;
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    transform-origin: center top;
+    transition: 0.1s all ease;
+    -webkit-transition: 0.1s all ease;
+    -moz-transition: 0.1s all ease;
+    -ms-transition: 0.1s all ease;
+    -o-transition: 0.1s all ease;
 }
 
 /* LAYOUT STYLES */
@@ -246,4 +282,31 @@ a:hover>svg>path {
     width: 100%;
     display: flex;
     align-items: center;
+}
+
+/* header SECTION STYLES */
+header {
+    margin: var(--spacing-lg) 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .nav-group {
+    display: flex;
+    align-items: center;
+}
+
+header .nav-group>img,
+header .nav-group>ul>li,
+header .btn-group>.btn-secondary:first-child {
+    margin: 0 var(--spacing-lg) 0 0;
+}
+
+#burger-menu {
+    display: none;
 }
