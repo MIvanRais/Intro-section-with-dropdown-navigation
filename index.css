@@ -5,7 +5,7 @@
     --text-dark: hsl(0, 0%, 8%);
     --text-gray: hsl(0, 0%, 41%);
     --body-font: 'Epilogue', sans-serif;
-    --h1-size: 85px;
+    --h1-size: 80px;
     --p-size: 18px;
     --p-height: 145%;
     --a-size: 15px;
@@ -19,7 +19,7 @@
     --spacing-md: 16px;
     --spacing-lg: 32px;
     --spacing-xl: 64px;
-    --standard-width: 1144px;
+    --standard-width: 1250px;
 
     /* COLOR VARIABLES */
     --black: hsl(0, 0%, 8%);
@@ -45,12 +45,15 @@ h1 {
     font-size: var(--h1-size);
     color: var(--text-dark);
     font-weight: 700;
+    margin: 0 0 var(--spacing-lg) 0;
 }
 
 p {
     font-size: var(--p-size);
     font-weight: 500;
     line-height: var(--p-height);
+    margin: var(--spacing-md) 0 var(--spacing-lg) 0;
+    width: 430px;
 }
 
 /* BUTTON STYLES */
@@ -76,6 +79,7 @@ button {
     -moz-transition: 0.2s all ease;
     -ms-transition: 0.2s all ease;
     -o-transition: 0.2s all ease;
+    margin: var(--spacing-md) 0 0 0;
 }
 
 .btn-primary:hover {
@@ -292,6 +296,7 @@ header {
 }
 
 header nav {
+    max-width: 1400px !important;
     display: flex;
     justify-content: space-between;
 }
@@ -309,4 +314,34 @@ header .btn-group>.btn-secondary:first-child {
 
 #burger-menu {
     display: none;
+}
+
+/* HERO SECTION STYLES */
+.hero {
+    display: flex;
+    justify-content: center;
+    margin: var(--spacing-md) 0 0 0;
+}
+
+.hero .col-left {
+    height: 100%;
+    justify-content: center;
+    margin: 0 var(--spacing-md) 0 0;
+}
+
+.hero .col-left .partner-container {
+    margin: calc(var(--spacing-xl) * 2) 0 0 0;
+}
+
+.hero .col-left .partner-container img {
+    margin: 0 calc(var(--spacing-lg) + 5px) 0 0;
+}
+
+.hero .col-right img {
+    width: 100%;
+    transform: scale(0.8) translateY(-60px);
+    -webkit-transform: scale(0.8) translateY(-60px);
+    -moz-transform: scale(0.8) translateY(-60px);
+    -ms-transform: scale(0.8) translateY(-60px);
+    -o-transform: scale(0.8) translateY(-60px);
 }
