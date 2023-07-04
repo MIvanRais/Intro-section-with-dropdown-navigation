@@ -320,6 +320,104 @@ header .btn-group>.btn-secondary:first-child {
     display: none;
 }
 
+/* nav SECTION STYLES */
+main nav {
+    box-sizing: border-box;
+    transform: translateX(500px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    -webkit-transform: translateX(500px);
+    -moz-transform: translateX(500px);
+    -ms-transform: translateX(500px);
+    -o-transform: translateX(500px);
+    background-color: var(--bg-white);
+    height: 100vh;
+    width: 200px;
+    padding: var(--spacing-md) var(--spacing-md);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.nav-side {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transition: 0.1s all ease;
+    -webkit-transition: 0.1s all ease;
+    -moz-transition: 0.1s all ease;
+    -ms-transition: 0.1s all ease;
+    -o-transition: 0.1s all ease;
+}
+
+main nav::before {
+    content: "";
+    width: 150%;
+    height: 100vh;
+    background-color: hsl(0, 0%, 8%, 0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(-300px);
+    -webkit-transform: translateX(-300px);
+    -moz-transform: translateX(-300px);
+    -ms-transform: translateX(-300px);
+    -o-transform: translateX(-300px);
+}
+
+#btn-close {
+    margin: 0 0 var(--spacing-md) 0;
+    width: 22px;
+    align-self: flex-end;
+}
+
+#btn-close:hover {
+    cursor: pointer;
+}
+
+main nav ul {
+    margin: 0 0 var(--spacing-md) 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+main nav ul li {
+    margin: 0 0 calc(var(--spacing-md) + 5px) 0;
+}
+
+main nav .btn-group,
+main nav .btn-group button {
+    width: 100%;
+}
+
+main nav .btn-group button:first-child {
+    margin: 0 0 var(--spacing-md) 0;
+    padding: 0;
+}
+
+main nav .sub-menu {
+    display: none;
+    margin: calc(var(--spacing-md) + 5px) 0 0 var(--spacing-md);
+}
+
+main nav .show-sub-menu-side {
+    display: flex;
+}
+
+main nav .sub-menu>li:last-child {
+    margin: 0;
+}
+
+main nav .sub-menu img {
+    width: 15px;
+    margin: 0 var(--spacing-sm) 0 0;
+}
+
 /* HERO SECTION STYLES */
 .hero {
     display: flex;
